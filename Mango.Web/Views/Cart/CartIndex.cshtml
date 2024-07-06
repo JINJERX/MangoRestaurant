@@ -69,7 +69,7 @@
                             <button type="submit" class="btn-success"> Apply </button>
                         </div>
                         <div class="col-6 text-end">
-                            <span class="text-danger" style="font-size:21px;"> Order Total : @Model.CartHeader.OrderTotal <br/></span>
+                            <span class="text-danger" style="font-size:21px;"> Order Total : @($"{Model.CartHeader.OrderTotal:c}") <br/></span>
                         </div>
                     </div>
                 </div>

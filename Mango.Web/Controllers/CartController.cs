@@ -51,7 +51,7 @@ public class CartController : Controller
         var response = await _cartService.GetCartByUserIdAsync<ResponseDto>(userId, accessToken);
 
         CartDto cartDto = new CartDto();
-        if (response is not null && response.IsSuccess)
+        if (response is not null && response.Result is not null && response.IsSuccess)
         {
             cartDto = JsonConvert.DeserializeObject<CartDto>(Convert.ToString(response.Result));
         }
