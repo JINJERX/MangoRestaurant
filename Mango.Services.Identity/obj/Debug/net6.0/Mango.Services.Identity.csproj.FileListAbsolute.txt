@@ -85,3 +85,4 @@ D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Ser
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.Identity\obj\Debug\net6.0\Mango.Services.Identity.genruntimeconfig.cache
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.Identity\obj\Debug\net6.0\ref\Mango.Services.Identity.dll
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.Identity\bin\Debug\net6.0\keys\is-signing-key-47BA15B0FF499C5389E1456B0ECDD523.json
+D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.Identity\obj\Debug\net6.0\Mango.Services.Identity.sourcelink.json

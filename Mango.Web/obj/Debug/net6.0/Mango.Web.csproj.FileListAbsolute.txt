@@ -231,3 +231,4 @@ D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Web
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Web\obj\Debug\net6.0\Mango.Web.sourcelink.json

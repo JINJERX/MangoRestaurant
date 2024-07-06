@@ -11,9 +11,11 @@ namespace Mango.Web.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
-        public ProductController(IProductService productService)
+        private readonly IAzureBlobService _azureBlobService;
+        public ProductController(IProductService productService, IAzureBlobService azureBlobService)
         {
             _productService = productService;
+            _azureBlobService = azureBlobService;
         }
 
         public async Task<IActionResult> ProductIndex()
@@ -27,22 +29,39 @@ namespace Mango.Web.Controllers
             }
             return View(list);
         }
-
+        
+        [Authorize]
         public async Task<IActionResult> ProductCreate()
         {
             return View();
         }
+        
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ProductCreate(ProductDto model)
+        public async Task<IActionResult> ProductCreate(ProductCreateDto model)
         {
             if (ModelState.IsValid)
             {
                 var accessToken = await HttpContext.GetTokenAsync("access_token");
-                var response = await _productService.CreateProductAsync<ResponseDto>(model, accessToken);
-                if (response != null && response.IsSuccess)
+                var azureBlobResponse = await _azureBlobService.UploadImage<ResponseDto>(model.Image, accessToken);
+                if (azureBlobResponse is not null && azureBlobResponse.IsSuccess)
                 {
-                    return RedirectToAction(nameof(ProductIndex));
+                    var productDto = new ProductDto()
+                    {
+                        ProductId = model.ProductId,
+                        Name = model.Name,
+                        Price = model.Price,
+                        Description = model.Description,
+                        CategoryName = model.CategoryName,
+                        ImageUrl = azureBlobResponse.Result.ToString(),
+                        Count = model.Count
+                    };
+                    var response = await _productService.CreateProductAsync<ResponseDto>(productDto, accessToken);
+                    if (response != null && response.IsSuccess)
+                    {
+                        return RedirectToAction(nameof(ProductIndex));
+                    }
                 }
             }
             return View(model);

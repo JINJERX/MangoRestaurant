@@ -10,8 +10,10 @@ builder.Services.AddHttpClient<IProductService, ProductService>();
 builder.Services.AddHttpClient<ICartService, CartService>();
 SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
 SD.ShoppingCartAPIBase = builder.Configuration["ServiceUrls:ShoppingCartAPI"];
+SD.AzureBlobAPIBase = builder.Configuration["ServiceUrls:AzureBlobAPI"];
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IAzureBlobService, AzureBlobService>();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAuthentication(options =>

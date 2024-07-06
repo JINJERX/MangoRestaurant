@@ -71,3 +71,4 @@ D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Ser
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.ShoppingCartAPI\obj\Debug\net6.0\Mango.Services.ShoppingCartAPI.pdb
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.ShoppingCartAPI\obj\Debug\net6.0\Mango.Services.ShoppingCartAPI.genruntimeconfig.cache
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.ShoppingCartAPI\obj\Debug\net6.0\ref\Mango.Services.ShoppingCartAPI.dll
+D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.ShoppingCartAPI\obj\Debug\net6.0\Mango.Services.ShoppingCartAPI.sourcelink.json
