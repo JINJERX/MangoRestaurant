@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.Services.ShoppingCart
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.Services.AzureBlobService", "Mango.Services.AzureBlobService\Mango.Services.AzureBlobService.csproj", "{A4757D8B-9C71-4AC2-B6F0-72DC448AC975}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.Services.CouponAPI", "Mango.Services.CouponAPI\Mango.Services.CouponAPI.csproj", "{6FE04979-37FB-4347-8937-545A1924D2A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,7 @@ Global
 		{3F2A904E-7298-4EC8-A176-97F8D2298A37} = {7CDB3EF8-FBA7-448E-BB49-3E8CAA477422}
 		{047F634D-50FB-4537-B39C-A123BB43C40B} = {7CDB3EF8-FBA7-448E-BB49-3E8CAA477422}
 		{A4757D8B-9C71-4AC2-B6F0-72DC448AC975} = {7CDB3EF8-FBA7-448E-BB49-3E8CAA477422}
+		{6FE04979-37FB-4347-8937-545A1924D2A6} = {7CDB3EF8-FBA7-448E-BB49-3E8CAA477422}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C5A81325-38A0-4DFA-9BC1-1DD84540045F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -47,5 +50,9 @@ Global
 		{A4757D8B-9C71-4AC2-B6F0-72DC448AC975}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4757D8B-9C71-4AC2-B6F0-72DC448AC975}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4757D8B-9C71-4AC2-B6F0-72DC448AC975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE04979-37FB-4347-8937-545A1924D2A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE04979-37FB-4347-8937-545A1924D2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE04979-37FB-4347-8937-545A1924D2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE04979-37FB-4347-8937-545A1924D2A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
