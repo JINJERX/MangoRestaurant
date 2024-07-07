@@ -63,7 +63,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var blobConnectionString = builder.Configuration.GetConnectionString("BlobStorage");
 var blobContainerName = builder.Configuration["BlobContainerName"];
-builder.Services.AddSingleton<IAzureBlobImageUploadRepository>(new AzureBlobImageUploadRepository(blobConnectionString, blobContainerName));
+builder.Services.AddSingleton<IAzureBlobRepository>(new AzureBlobRepository(blobConnectionString, blobContainerName));
 
 var app = builder.Build();
 

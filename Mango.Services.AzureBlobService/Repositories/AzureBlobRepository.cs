@@ -1,13 +1,14 @@
 ﻿using Azure.Storage.Blobs;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Mango.Services.AzureBlobService.Repositories;
 
-public class AzureBlobImageUploadRepository : IAzureBlobImageUploadRepository
+public class AzureBlobRepository : IAzureBlobRepository
 {
     private readonly string _connectionString;
     private readonly string _containerName;
 
-    public AzureBlobImageUploadRepository(string connectionString, string containerName)
+    public AzureBlobRepository(string connectionString, string containerName)
     {
         _connectionString = connectionString;
         _containerName = containerName;
@@ -34,5 +35,27 @@ public class AzureBlobImageUploadRepository : IAzureBlobImageUploadRepository
 
         // Return the URI of the uploaded blob
         return blobClient.Uri.ToString();
+    }
+    
+    public async Task<bool> DeleteImageAsync(string imageUrl)
+    {
+        var blobServiceClient = new BlobServiceClient(_connectionString);
+
+        var containerClient = blobServiceClient.GetBlobContainerClient(_containerName);
+
+        var fileName = GetBlobNameFromUrl(imageUrl);
+
+        var blobClient = containerClient.GetBlobClient(fileName);
+
+        var response = await blobClient.DeleteIfExistsAsync();
+
+        return response;
+    }
+    
+    private string GetBlobNameFromUrl(string imageUrl)
+    {
+        var uri = new Uri(imageUrl);
+        var segments = uri.AbsolutePath.TrimStart('/').Split("/");
+        return segments.Last();
     }
 }

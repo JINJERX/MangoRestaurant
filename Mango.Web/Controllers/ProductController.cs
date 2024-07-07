@@ -113,10 +113,14 @@ namespace Mango.Web.Controllers
             if (ModelState.IsValid)
             {
                 var accessToken = await HttpContext.GetTokenAsync("access_token");
-                var response = await _productService.DeleteProductAsync<ResponseDto>(model.ProductId, accessToken);
-                if (response.IsSuccess)
+                var imageDeleted = await _azureBlobService.DeleteImage<ResponseDto>(model.ImageUrl, accessToken);
+                if (imageDeleted.IsSuccess)
                 {
-                    return RedirectToAction(nameof(ProductIndex));
+                    var response = await _productService.DeleteProductAsync<ResponseDto>(model.ProductId, accessToken);
+                    if (response.IsSuccess)
+                    {
+                        return RedirectToAction(nameof(ProductIndex));
+                    }
                 }
             }
             return View(model);

@@ -2,6 +2,7 @@
 using Mango.Services.AzureBlobService.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Mango.Services.AzureBlobService.Controllers;
 
@@ -9,11 +10,11 @@ namespace Mango.Services.AzureBlobService.Controllers;
 [Route("api/AzureBlob")]
 public class AzureBlobController : ControllerBase
 {
-    private readonly IAzureBlobImageUploadRepository _azureBlobImageUploadRepository;
+    private readonly IAzureBlobRepository _azureBlobRepository;
 
-    public AzureBlobController(IAzureBlobImageUploadRepository azureBlobImageUploadRepository)
+    public AzureBlobController(IAzureBlobRepository azureBlobRepository)
     {
-        _azureBlobImageUploadRepository = azureBlobImageUploadRepository;
+        _azureBlobRepository = azureBlobRepository;
     }
     
     [HttpPost("Upload")]
@@ -31,8 +32,34 @@ public class AzureBlobController : ControllerBase
         
         try
         {
-            string url = await _azureBlobImageUploadRepository.UploadImageAsync(file);
+            string url = await _azureBlobRepository.UploadImageAsync(file);
             response.Result = url;
+        }
+        catch (Exception e)
+        {
+            response.IsSuccess = false;
+            response.ErrorMessages = new List<string>() { e.ToString() };
+        }
+
+        return response;
+    }
+    
+    [HttpDelete("Delete")]
+    [Authorize]
+    public async Task<ResponseDto> Delete([FromBody]string imageUrl)
+    {
+        var response = new ResponseDto();
+
+        if (imageUrl.IsNullOrEmpty())
+        {
+            response.IsSuccess = false;
+            response.DisplayMessage = "File Name is null or empty";
+        }
+        
+        try
+        {
+            bool isSuccess = await _azureBlobRepository.DeleteImageAsync(imageUrl);
+            response.IsSuccess = isSuccess;
         }
         catch (Exception e)
         {
