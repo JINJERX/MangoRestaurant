@@ -1,4 +1,5 @@
-﻿@model Mango.Web.Models.CartModels.CartDto;
+﻿@using Microsoft.IdentityModel.Tokens
+@model Mango.Web.Models.CartModels.CartDto;
 
 @if (Model.CartDetails is not null && Model.CartDetails.Count() > 0)
 {
@@ -64,12 +65,31 @@
                     }
                     <div class="row">
                         <div class="col-6">
-                            <span>Coupon:</span>
-                            <input/>
-                            <button type="submit" class="btn-success"> Apply </button>
+                            @if (Model.CartHeader.CouponCode.IsNullOrEmpty())
+                            {
+                                <span>Coupon:</span>
+                                <input asp-for="CartHeader.CouponCode"/>
+                                <button type="submit" asp-action="ApplyCoupon" class="btn-success"> Apply </button>
+                            }
+                            else
+                            {
+                                <span>Coupon:</span>
+                                <input asp-for="CartHeader.CouponCode" disabled/>
+                                <button type="submit" asp-action="RemoveCoupon" class="btn-danger"> Remove </button>
+                            }
+                            @if (TempData["CouponMessage"] != null)
+                            {
+                                <div class="alert alert-danger">
+                                    @TempData["CouponMessage"]
+                                </div>
+                            }
                         </div>
                         <div class="col-6 text-end">
                             <span class="text-danger" style="font-size:21px;"> Order Total : @($"{Model.CartHeader.OrderTotal:c}") <br/></span>
+                            @if (Model.CartHeader.DiscountTotal > 0)
+                            {
+                                <spanc class="text-success"> Order Discount : @($"{Model.CartHeader.DiscountTotal:c}")</spanc>
+                            }
                         </div>
                     </div>
                 </div>

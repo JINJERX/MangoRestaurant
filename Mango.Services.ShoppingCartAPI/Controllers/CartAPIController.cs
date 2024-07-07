@@ -87,4 +87,40 @@ public class CartAPIController : ControllerBase
 
         return response;
     }
+    
+    [HttpPost("ApplyCoupon")]
+    public async Task<object> ApplyCoupon([FromBody] CartDto cartDto)
+    {
+        var response = new ResponseDto();
+        try
+        {
+            bool isSuccess = await _cartRepository.ApplyCoupon(cartDto.CartHeader.UserId, cartDto.CartHeader.CouponCode);
+            response.Result = isSuccess;
+        }
+        catch (Exception e)
+        {
+            response.IsSuccess = false;
+            response.ErrorMessages = new List<string>() { e.ToString() };
+        }
+
+        return response;
+    }
+    
+    [HttpPost("RemoveCoupon")]
+    public async Task<object> RemoveCoupon([FromBody] string userId)
+    {
+        var response = new ResponseDto();
+        try
+        {
+            bool isSuccess = await _cartRepository.RemoveCoupon(userId);
+            response.Result = isSuccess;
+        }
+        catch (Exception e)
+        {
+            response.IsSuccess = false;
+            response.ErrorMessages = new List<string>() { e.ToString() };
+        }
+
+        return response;
+    }
 }
