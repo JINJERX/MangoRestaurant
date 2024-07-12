@@ -39,11 +39,43 @@ public class CartController : Controller
         return BadRequest();
     }
 
-    public IActionResult Checkout()
+    public async Task<IActionResult> Checkout()
     {
-        throw new NotImplementedException();
+        
+        return View(await LoadCartDtoBasedOnLoggedInUserAsync());
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> ApplyCoupon(CartDto cartDto)
+    {
+        var userId = User.Claims.Where(u => u.Type == "sub").FirstOrDefault()?.Value;
+        var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+        var response = await _cartService.ApplyCoupon<ResponseDto>(cartDto, accessToken);
+
+        if (response is not null && response.Result is not null && response.IsSuccess)
+        {
+            return RedirectToAction(nameof(CartIndex));
+        }
+        
+        return RedirectToAction(nameof(CartIndex));
     }
 
+    [HttpPost]
+    public async Task<IActionResult> RemoveCoupon(CartDto cartDto)
+    {
+        var userId = User.Claims.Where(u => u.Type == "sub").FirstOrDefault()?.Value;
+        var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+        var response = await _cartService.RemoveCoupon<ResponseDto>(cartDto.CartHeader.UserId, accessToken);
+
+        if (response is not null && response.IsSuccess)
+        {
+            return RedirectToAction(nameof(CartIndex));
+        }
+
+        return BadRequest();
+    }
     private async Task<CartDto> LoadCartDtoBasedOnLoggedInUserAsync()
     {
         var userId = User.Claims.Where(u => u.Type == "sub").FirstOrDefault()?.Value;
@@ -82,38 +114,5 @@ public class CartController : Controller
         }
 
         return cartDto;
-    }
-
-
-    [HttpPost]
-    public async Task<IActionResult> ApplyCoupon(CartDto cartDto)
-    {
-        var userId = User.Claims.Where(u => u.Type == "sub").FirstOrDefault()?.Value;
-        var accessToken = await HttpContext.GetTokenAsync("access_token");
-
-        var response = await _cartService.ApplyCoupon<ResponseDto>(cartDto, accessToken);
-
-        if (response is not null && response.Result is not null && response.IsSuccess)
-        {
-            return RedirectToAction(nameof(CartIndex));
-        }
-        
-        return RedirectToAction(nameof(CartIndex));
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> RemoveCoupon(CartDto cartDto)
-    {
-        var userId = User.Claims.Where(u => u.Type == "sub").FirstOrDefault()?.Value;
-        var accessToken = await HttpContext.GetTokenAsync("access_token");
-
-        var response = await _cartService.RemoveCoupon<ResponseDto>(cartDto.CartHeader.UserId, accessToken);
-
-        if (response is not null && response.IsSuccess)
-        {
-            return RedirectToAction(nameof(CartIndex));
-        }
-
-        return BadRequest();
     }
 }

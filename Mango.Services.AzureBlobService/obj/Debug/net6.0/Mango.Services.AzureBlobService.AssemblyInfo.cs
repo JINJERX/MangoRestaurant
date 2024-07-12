@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mango.Services.AzureBlobService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3517b1f0f195978f77de8d7d506e6c0329da21ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94a42166dd28c8578963311bacac713e6f1ce54f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mango.Services.AzureBlobService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mango.Services.AzureBlobService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

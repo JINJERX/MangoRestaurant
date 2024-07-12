@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Mango.Web.bundle.scp.css"
     },
     {
+      "Id": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\wwwroot\\css\\bootstrap-datetimepicker.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-datetimepicker.css"
+    },
+    {
       "Id": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\wwwroot\\images\\order.PNG",
       "PackagePath": "staticwebassets\\images\\order.PNG"
+    },
+    {
+      "Id": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\wwwroot\\js\\bootstrap-datetimepicker.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap-datetimepicker.js"
     },
     {
       "Id": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\wwwroot\\js\\site.js",

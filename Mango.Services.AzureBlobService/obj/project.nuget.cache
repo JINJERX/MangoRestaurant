@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "A4b/ZSFYpSgAFWcX8L/MadFne909CreWfVDTusEuru4moxmGEgl8sG6VcWpvRTkFMlHeN0OyEuuwBGMEdd6Feg==",
+  "dgSpecHash": "EFZOJhLrRx9jHZlLN5JnVu/LeWaLvBHVS7oagozMU2WvQ6sM+BAmshTk8w9YDmEfGFWGJwr4MK291vKpmxlfgA==",
   "success": true,
   "projectFilePath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Services.AzureBlobService\\Mango.Services.AzureBlobService.csproj",
   "expectedPackageFiles": [
@@ -37,7 +37,11 @@
     "C:\\Users\\sasha\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\sasha\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\sasha\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
-    "C:\\Users\\sasha\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    "C:\\Users\\sasha\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\sasha\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
+    "C:\\Users\\sasha\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512",
+    "C:\\Users\\sasha\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.31\\microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512",
+    "C:\\Users\\sasha\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.31\\microsoft.netcore.app.host.win-x64.6.0.31.nupkg.sha512"
   ],
   "logs": []
 }
