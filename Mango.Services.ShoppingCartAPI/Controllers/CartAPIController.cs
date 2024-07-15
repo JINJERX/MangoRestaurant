@@ -1,4 +1,6 @@
-﻿using Mango.Services.ShoppingCartAPI.Models;
+﻿using Mango.MessageBus;
+using Mango.Services.ShoppingCartAPI.Messages;
+using Mango.Services.ShoppingCartAPI.Models;
 using Mango.Services.ShoppingCartAPI.Models.Dtos;
 using Mango.Services.ShoppingCartAPI.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -10,10 +12,12 @@ namespace Mango.Services.ShoppingCartAPI.Controllers;
 public class CartAPIController : ControllerBase
 {
     private readonly ICartRepository _cartRepository;
+    private readonly IMessageBus _messageBus;
 
-    public CartAPIController(ICartRepository cartRepository)
+    public CartAPIController(ICartRepository cartRepository, IMessageBus messageBus)
     {
         _cartRepository = cartRepository;
+        _messageBus = messageBus;
     }
 
     [HttpGet("GetCart/{userId}")]
@@ -114,6 +118,32 @@ public class CartAPIController : ControllerBase
         {
             bool isSuccess = await _cartRepository.RemoveCoupon(userId);
             response.Result = isSuccess;
+        }
+        catch (Exception e)
+        {
+            response.IsSuccess = false;
+            response.ErrorMessages = new List<string>() { e.ToString() };
+        }
+
+        return response;
+    }
+    
+    [HttpPost("Checkout")]
+    public async Task<object> Checkout(CheckoutHeaderDto checkoutHeaderDto)
+    {
+        var response = new ResponseDto();
+        try
+        {
+            CartDto cartDto = await _cartRepository.GetCartByUserIdAsync(checkoutHeaderDto.UserId);
+
+            if (cartDto is null)
+            {
+                return BadRequest();
+            }
+
+            checkoutHeaderDto.CartDetails = cartDto.CartDetails;
+            // logic to add message to process order
+            await _messageBus.PublishMessage(checkoutHeaderDto, "checkoutmessagetopic");
         }
         catch (Exception e)
         {

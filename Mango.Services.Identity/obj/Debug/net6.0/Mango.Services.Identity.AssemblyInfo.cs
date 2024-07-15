@@ -11,10 +11,11 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("95b1e024-e18c-4e97-ae48-2d43a432b1e9")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mango.Services.Identity")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94a42166dd28c8578963311bacac713e6f1ce54f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f0362548b7712e960739b0a593924131eb9d487")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mango.Services.Identity")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mango.Services.Identity")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
