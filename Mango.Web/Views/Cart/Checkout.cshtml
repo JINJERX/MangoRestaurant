@@ -1,5 +1,10 @@
 ﻿@model Mango.Web.Models.CartModels.CartDto 
 
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-warning" role="alert">@TempData["Error"]</div>
+}
+
 @if (Model is not null && Model.CartDetails.Any())
 {
     <form method="post">
