@@ -80,3 +80,6 @@ D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Ser
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\System.ClientModel.dll
 D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\Mango.MessageBus.dll
+D:\Programming\C#\Udemy Microservices .NET Core Course\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\Mango.MessageBus.pdb

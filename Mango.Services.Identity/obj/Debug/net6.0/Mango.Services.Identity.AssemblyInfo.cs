@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mango.Services.Identity")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d0b5f14b520b0ee362ce21819e0873581382184")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5177530ca213a51742876b6d57e48697ad1c4c95")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mango.Services.Identity")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mango.Services.Identity")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

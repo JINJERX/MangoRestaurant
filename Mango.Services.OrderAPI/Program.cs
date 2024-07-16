@@ -1,4 +1,5 @@
 using AutoMapper;
+using Mango.MessageBus;
 using Mango.Services.OrderAPI;
 using Mango.Services.OrderAPI.DbContexts;
 using Mango.Services.OrderAPI.Extensions;
@@ -38,7 +39,7 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo{Title = "Mango.Services.CouponAPI", Version = "v1"});
+    c.SwaggerDoc("v1", new OpenApiInfo{Title = "Mango.Services.OrderAPI", Version = "v1"});
     c.EnableAnnotations();
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -75,7 +76,8 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 var optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 optionBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 builder.Services.AddSingleton(new OrderRepository(optionBuilder.Options));
-builder.Services.AddSingleton<IAzureServiceBusConsumer, AzureServiceBusConsumer>();
+builder.Services.AddSingleton<IAzureServiceBusConsumer, AzureServiceBusConsumerOrder>();
+builder.Services.AddSingleton<IMessageBus>(sp => new AzureServiceMessageBus(builder.Configuration.GetConnectionString("AzureServiceBus")));
 
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
