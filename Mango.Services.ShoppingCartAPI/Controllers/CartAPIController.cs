@@ -159,7 +159,7 @@ public class CartAPIController : ControllerBase
 
             checkoutHeaderDto.CartDetails = cartDto.CartDetails;
             // logic to add message to process order
-            await _messageBus.PublishMessage(checkoutHeaderDto, "checkoutmessagetopic");
+            await _messageBus.PublishMessage(checkoutHeaderDto, "checkoutqueue");
 
             await _cartRepository.ClearCartAsync(checkoutHeaderDto.UserId);
         }

@@ -4,6 +4,7 @@
     <option name="keyValueStorage">
       <map>
         <entry key="Common:047f634d-50fb-4537-b39c-a123bb43c40b:dbContext" value="Mango.Services.ShoppingCartAPI.DbContexts.ApplicationDbContext" />
+        <entry key="Common:3c95c2bd-ced9-4397-af25-1313f00ce966:dbContext" value="Mango.Services.Email.DbContexts.ApplicationDbContext" />
         <entry key="Common:3f2a904e-7298-4ec8-a176-97f8d2298a37:dbContext" value="Mango.Services.Identity.DbContexts.ApplicationDbContext" />
         <entry key="Common:6fe04979-37fb-4347-8937-545a1924d2a6:dbContext" value="Mango.Services.CouponAPI.DbContexts.ApplicationDbContext" />
         <entry key="Common:92932139-5776-4577-a72f-a553f208bea8:dbContext" value="Mango.Services.ProductAPI.DbContexts.ApplicationDbContext" />

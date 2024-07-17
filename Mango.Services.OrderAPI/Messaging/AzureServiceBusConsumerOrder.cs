@@ -15,7 +15,8 @@ public class AzureServiceBusConsumerOrder : IAzureServiceBusConsumer
     private readonly string _serviceBusConnectionString;
     
     private readonly string _checkoutSubscription;
-    private readonly string _checkoutMessageTopic;  
+    private readonly string _checkoutMessageTopic;
+    private readonly string _checkoutMessageQueue;
     
     private readonly string _orderPaymentProcessSubscription;
     private readonly string _orderPaymentProcessMessageTopic;
@@ -42,6 +43,7 @@ public class AzureServiceBusConsumerOrder : IAzureServiceBusConsumer
         
         _checkoutSubscription = configuration.GetValue<string>("CheckoutSubscription");
         _checkoutMessageTopic = configuration.GetValue<string>("CheckoutMessageTopic");
+        _checkoutMessageQueue = configuration.GetValue<string>("CheckoutMessageQueue");
         
         _orderPaymentProcessSubscription = configuration.GetValue<string>("OrderPaymentProcessSubscription");
         _orderPaymentProcessMessageTopic = configuration.GetValue<string>("OrderPaymentProcessTopic");
@@ -50,7 +52,11 @@ public class AzureServiceBusConsumerOrder : IAzureServiceBusConsumer
         _orderUpdatePaymentResultTopic = configuration.GetValue<string>("OrderUpdatePaymentResultTopic");
         
         var client = new ServiceBusClient(_serviceBusConnectionString);
-        _checkoutProcessor = client.CreateProcessor(_checkoutMessageTopic, _checkoutSubscription);
+        // Topic-Subscription method
+        // _checkoutProcessor = client.CreateProcessor(_checkoutMessageTopic, _checkoutSubscription);
+        
+        // Queue method
+        _checkoutProcessor = client.CreateProcessor(_checkoutMessageQueue);
         _orderUpdatePaymentStatusProcessor = client.CreateProcessor(_orderUpdatePaymentResultTopic, _orderUpdatePaymentResultSubscription);
     }
 
@@ -125,6 +131,7 @@ public class AzureServiceBusConsumerOrder : IAzureServiceBusConsumer
         PaymentRequestMessage paymentRequestMessage = new()
         {
             Name = $"{orderHeader.FirstName} {orderHeader.LastName}",
+            Email = orderHeader.Email,
             CardNumber = orderHeader.CardNumber,
             CVV = orderHeader.CVV,
             OrderId = orderHeader.OrderHeaderId,
