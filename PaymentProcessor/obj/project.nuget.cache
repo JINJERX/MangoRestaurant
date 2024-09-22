@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tryrgVdyS+mVWv/w+3n17kGnTW2rgLqkORoBT/XPO76csw2KZJSKE89TsO17dovJK5sEMdeKm3qXzOIAoSGnwg==",
+  "dgSpecHash": "QCAPs9Pnt5M=",
   "success": true,
-  "projectFilePath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\sasha\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
-    "C:\\Users\\sasha\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512",
-    "C:\\Users\\sasha\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.31\\microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\Project\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
