@@ -1,0 +1,90 @@
+
+x-app-default-env: &app-default-env
+  Logging__LogLevel__Default: Information
+  Logging__LogLevel__Microsoft.AspNetCore: Warning
+  AllowedHosts: "*"
+  ConnectionStrings__DefaultConnection: "Data Source=LAPTOP-15J19LA5;Initial Catalog=MangoIdentityServer;Integrated Security=True;TrustServerCertificate=true"
+
+services:
+  app:
+    restart: unless-stopped
+    image: mango.web
+    build: Mango.Web
+    volumes:
+      - ./Mango.Web/wwwroot:/app/wwwroot
+    environment:
+      <<: *app-default-env
+      ServiceUrls__IdentityAPI: http://app.service.identity
+      ServiceUrls__ProductAPI: http://app.service.product
+      ServiceUrls__CouponAPI: http://app.service.coupon
+      ServiceUrls__ShoppingCartAPI: http://app.service.shoppingcart
+      ServiceUrls__AzureBlobAPI:
+
+  app.service.order:
+    restart: unless-stopped
+    image: mango.servces.shoppingcartapi
+    build:
+      context: .
+      dockerfile: ./Mango.Services.ShoppingCartAPI/Dockerfile
+    environment:
+      <<: *app-default-env
+
+  app.service.product:
+    restart: unless-stopped
+    image: mango.servces.productapi
+    build: Mango.Services.ProductAPI
+    environment:
+      <<: *app-default-env
+
+  app.service.payment:
+    restart: unless-stopped
+    image: mango.service.payment
+    build:
+      context: .
+      dockerfile: ./Mango.Services.PaymentAPI/Dockerfile
+    environment:
+      <<: *app-default-env
+      ServiceUrls__IdentityServer:
+      OrderPaymentProcessTopic:
+      OrderPaymentProcessSubscription:
+      OrderUpdatePaymentResultTopic:
+      OrderUpdatePaymentResultSubscription:
+
+  app.service.shoppingcart:
+    restart: unless-stopped
+    image: app.service.shoppingcart
+    build:
+      context: .
+      dockerfile: ./Mango.Services.ShoppingCartAPI/Dockerfile
+    environment:
+      <<: *app-default-env
+      ServiceUrls__IdentityServer: http://app.service.identity
+      ServiceUrls__CouponAPI: http://app.service.coupon
+
+  app.service.identity:
+    restart: unless-stopped
+    image: mango.servces.identity
+    build: Mango.Services.Identity
+    volumes:
+      - ./Mango.Services.Identity/wwwroot:/app/wwwroot
+    environment:
+      <<: *app-default-env
+
+  app.service.email:
+    restart: unless-stopped
+    image: mango.service.email
+    build:
+      context: .
+      dockerfile: ./Mango.Services.Email/Dockerfile
+    environment:
+      <<: *app-default-env
+      OrderUpdatePaymentResultTopic:
+      EmailSubscription:
+
+  app.service.coupon:
+    restart: unless-stopped
+    image: mango.service.coupon
+    build: Mango.Services.CouponAPI
+    environment:
+      <<: *app-default-env
+      ServiceUrls__IdentityServer:

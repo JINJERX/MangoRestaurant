@@ -1,0 +1,15 @@
+services:
+  app:
+    ports:
+      - 8080:80
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  db:
+    restart: unless-stopped
+    image: mcr.microsoft.com/mssql/server
+    volumes:
+      - ../docker/db/data:/var/opt/mssql
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: sa

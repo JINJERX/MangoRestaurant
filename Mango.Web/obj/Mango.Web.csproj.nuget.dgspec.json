@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\Mango.Web.csproj": {}
+    "D:\\Project\\MangoRestaurant\\Mango.Web\\Mango.Web.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\Mango.Web.csproj": {
+    "D:\\Project\\MangoRestaurant\\Mango.Web\\Mango.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\Mango.Web.csproj",
+        "projectUniqueName": "D:\\Project\\MangoRestaurant\\Mango.Web\\Mango.Web.csproj",
         "projectName": "Mango.Web",
-        "projectPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\Mango.Web.csproj",
-        "packagesPath": "C:\\Users\\sasha\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Web\\obj\\",
+        "projectPath": "D:\\Project\\MangoRestaurant\\Mango.Web\\Mango.Web.csproj",
+        "packagesPath": "C:\\Users\\zdbot\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\MangoRestaurant\\Mango.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sasha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zdbot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,24 +77,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -103,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

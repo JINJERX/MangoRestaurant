@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Services.PaymentAPI\\Mango.Services.PaymentAPI.csproj": {}
+    "D:\\Project\\MangoRestaurant\\Mango.Services.PaymentAPI\\Mango.Services.PaymentAPI.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj": {
+    "D:\\Project\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj",
+        "projectUniqueName": "D:\\Project\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj",
         "projectName": "Mango.MessageBus",
-        "projectPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj",
-        "packagesPath": "C:\\Users\\sasha\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.MessageBus\\obj\\",
+        "projectPath": "D:\\Project\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj",
+        "packagesPath": "C:\\Users\\zdbot\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\MangoRestaurant\\Mango.MessageBus\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sasha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zdbot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,40 +77,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Services.PaymentAPI\\Mango.Services.PaymentAPI.csproj": {
+    "D:\\Project\\MangoRestaurant\\Mango.Services.PaymentAPI\\Mango.Services.PaymentAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Services.PaymentAPI\\Mango.Services.PaymentAPI.csproj",
+        "projectUniqueName": "D:\\Project\\MangoRestaurant\\Mango.Services.PaymentAPI\\Mango.Services.PaymentAPI.csproj",
         "projectName": "Mango.Services.PaymentAPI",
-        "projectPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Services.PaymentAPI\\Mango.Services.PaymentAPI.csproj",
-        "packagesPath": "C:\\Users\\sasha\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Services.PaymentAPI\\obj\\",
+        "projectPath": "D:\\Project\\MangoRestaurant\\Mango.Services.PaymentAPI\\Mango.Services.PaymentAPI.csproj",
+        "packagesPath": "C:\\Users\\zdbot\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\MangoRestaurant\\Mango.Services.PaymentAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sasha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zdbot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,11 +110,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj": {
-                "projectPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj"
+              "D:\\Project\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj": {
+                "projectPath": "D:\\Project\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj"
               },
-              "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj": {
-                "projectPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj"
+              "D:\\Project\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj": {
+                "projectPath": "D:\\Project\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj"
               }
             }
           }
@@ -164,24 +150,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -190,21 +158,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj": {
+    "D:\\Project\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj",
+        "projectUniqueName": "D:\\Project\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj",
         "projectName": "PaymentProcessor",
-        "projectPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj",
-        "packagesPath": "C:\\Users\\sasha\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\PaymentProcessor\\obj\\",
+        "projectPath": "D:\\Project\\MangoRestaurant\\PaymentProcessor\\PaymentProcessor.csproj",
+        "packagesPath": "C:\\Users\\zdbot\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\MangoRestaurant\\PaymentProcessor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sasha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zdbot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -245,26 +213,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
