@@ -3702,19 +3702,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sasha\\.nuget\\packages\\": {}
+    "C:\\Users\\zdbot\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Services.ShoppingCartAPI\\Mango.Services.ShoppingCartAPI.csproj",
+      "projectUniqueName": "D:\\Project\\MangoRestaurant\\Mango.Services.ShoppingCartAPI\\Mango.Services.ShoppingCartAPI.csproj",
       "projectName": "Mango.Services.ShoppingCartAPI",
-      "projectPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Services.ShoppingCartAPI\\Mango.Services.ShoppingCartAPI.csproj",
-      "packagesPath": "C:\\Users\\sasha\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.Services.ShoppingCartAPI\\obj\\",
+      "projectPath": "D:\\Project\\MangoRestaurant\\Mango.Services.ShoppingCartAPI\\Mango.Services.ShoppingCartAPI.csproj",
+      "packagesPath": "C:\\Users\\zdbot\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\MangoRestaurant\\Mango.Services.ShoppingCartAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sasha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\zdbot\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3728,8 +3728,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj": {
-              "projectPath": "D:\\Programming\\C#\\Udemy Microservices .NET Core Course\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj"
+            "D:\\Project\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj": {
+              "projectPath": "D:\\Project\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj"
             }
           }
         }
@@ -3795,24 +3795,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3821,7 +3803,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
