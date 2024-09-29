@@ -14,8 +14,11 @@ RUN dotnet build "./Mango.Services.ShoppingCartAPI/Mango.Services.ShoppingCartAP
 FROM build AS publish
 RUN dotnet publish "./Mango.Services.ShoppingCartAPI/Mango.Services.ShoppingCartAPI.csproj" -c Release -o /app/publish
 
-
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+RUN mkdir -p /app/certificates
+COPY ./Certificates/aspnetapp.pfx /app/certificates
+
 ENTRYPOINT ["dotnet", "Mango.Services.ShoppingCartAPI.dll"]

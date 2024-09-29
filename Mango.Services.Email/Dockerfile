@@ -18,4 +18,8 @@ RUN dotnet publish "./Mango.Services.Email/Mango.Services.Email.csproj" -c Relea
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+RUN mkdir -p /app/certificates
+COPY ./Certificates/aspnetapp.pfx /app/certificates
+
 ENTRYPOINT ["dotnet", "Mango.Services.Email.dll"]

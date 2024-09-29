@@ -14,4 +14,8 @@ RUN dotnet publish "Mango.Web.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+RUN mkdir -p /app/certificates
+COPY Mango.Web/Certificates/aspnetapp.pfx /app/certificates
+
 ENTRYPOINT ["dotnet", "Mango.Web.dll"]

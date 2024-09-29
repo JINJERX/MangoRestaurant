@@ -11,4 +11,10 @@ RUN dotnet publish "./Mango.Services.CouponAPI.csproj" -c Release -o /app/publis
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+
+RUN mkdir -p /app/certificates
+COPY ./Certificates/aspnetapp.pfx /app/certificates
+
+
 ENTRYPOINT ["dotnet", "Mango.Services.CouponAPI.dll"]
