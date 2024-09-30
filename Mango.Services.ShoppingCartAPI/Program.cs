@@ -91,7 +91,6 @@ using (var scope = app.Services.CreateScope())
     {
         var context = services.GetRequiredService<ApplicationDbContext>();
         context.Database.Migrate();
-        context.Database.EnsureCreated();
     }
     catch (Exception ex)
     {
