@@ -38,6 +38,11 @@ builder.Services.AddAuthentication(options =>
         options.TokenValidationParameters.RoleClaimType = "role";
         options.Scope.Add("mango");
         options.SaveTokens = true;
+        options.RequireHttpsMetadata = false;
+        options.BackchannelHttpHandler = new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
+        };
 
     });
 

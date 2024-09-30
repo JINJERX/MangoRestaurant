@@ -7,12 +7,13 @@ services:
   app:
     restart: unless-stopped
     image: mango.web
-    build: Mango.Web
+    build:
+      context: ./Mango.Web
     volumes:
       - ./Mango.Web/wwwroot:/app/wwwroot
     environment:
       <<: *app-default-env
-      ServiceUrls__IdentityAPI: http://app.service.identity
+      ServiceUrls__IdentityAPI: https://app.service.identity
       ServiceUrls__ProductAPI: http://app.service.product
       ServiceUrls__CouponAPI: http://app.service.coupon
       ServiceUrls__ShoppingCartAPI: http://app.service.shoppingcart
@@ -24,7 +25,7 @@ services:
     image: mango.services.order
     build:
       context: .
-      dockerfile: ./Mango.Services.ShoppingCartAPI/Dockerfile
+      dockerfile: ./Mango.Services.OrderAPI/Dockerfile
     environment:
       <<: *app-default-env
       ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Username=postgres;Password=postgres;Database=MangoOrderAPI"

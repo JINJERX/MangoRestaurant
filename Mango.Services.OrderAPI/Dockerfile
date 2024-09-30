@@ -20,6 +20,6 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 
 RUN mkdir -p /app/certificates
-COPY ./Certificates/aspnetapp.pfx /app/certificates
+COPY Mango.Services.OrderAPI/Certificates/aspnetapp.pfx /app/certificates
 
 ENTRYPOINT ["dotnet", "Mango.Services.OrderAPI.dll"]
