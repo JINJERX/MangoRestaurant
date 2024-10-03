@@ -16,4 +16,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build App Docker Image
       run: docker build ./Mango.Web  --tag mango.web
+
+    - name: Build App Docker Image
+      run: docker build . --file ./Mango.Services.OrderAPI/Dockerfile  --tag mango.service.order
+
+    
       
