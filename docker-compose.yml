@@ -13,7 +13,7 @@ services:
       - ./Mango.Web/wwwroot:/app/wwwroot
     environment:
       <<: *app-default-env
-      ServiceUrls__IdentityAPI: https://app.service.identity
+      ServiceUrls__IdentityAPI: https://localhost:44384
       ServiceUrls__ProductAPI: http://app.service.product
       ServiceUrls__CouponAPI: http://app.service.coupon
       ServiceUrls__ShoppingCartAPI: http://app.service.shoppingcart
@@ -29,6 +29,15 @@ services:
     environment:
       <<: *app-default-env
       ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Username=postgres;Password=postgres;Database=MangoOrderAPI"
+      ConnectionStrings__AzureServiceBus: ${AZURE_SERVICE_BUS_CONNECTION_STRING}
+      CheckoutMessageTopic: "checkoutmessagetopic"
+      CheckoutSubscription: "mangoOrdersSubscription"
+      OrderPaymentProcessTopic: "orderpaymentprocesstopic"
+      OrderPaymentProcessSubscription: "mangoPayment"
+      OrderUpdatePaymentResultTopic: "orderupdatepaymentresulttopic"
+      OrderUpdatePaymentResultSubscription": "mangoOrdersSubscription"
+      CheckoutMessageQueue: "checkoutqueue"
+    
       
   app.service.azureblobservice:
     restart: unless-stopped
