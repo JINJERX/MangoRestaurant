@@ -52,15 +52,15 @@ jobs:
       -
         name: push to registry
         run: |
-          jinjerxx/mango.services.productapi
-          jinjerxx/mango.service.order
+          docker image push jinjerxx/mango.services.productapi
+          docker image push jinjerxx/mango.service.order
           docker image push jinjerxx/mango.web
-          jinjerxx/mango.services.payment
-          jinjerxx/mango.services.shoppingcart
-          jinjerxx/mango.services.shoppingcart
-          jinjerxx/mango.services.identity
-          jinjerxx/mango.services.email
-          jinjerxx/mango.services.coupon
+          docker image push jinjerxx/mango.services.payment
+          docker image push jinjerxx/mango.services.shoppingcart
+          docker image push jinjerxx/mango.services.shoppingcart
+          docker image push jinjerxx/mango.services.identity
+          docker image push jinjerxx/mango.services.email
+          docker image push jinjerxx/mango.services.coupon
         
          
   
