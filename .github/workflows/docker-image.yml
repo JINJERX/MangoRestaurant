@@ -17,8 +17,28 @@ jobs:
     - name: Build App Docker Image
       run: docker build ./Mango.Web  --tag mango.web
 
-    - name: Build App Docker Image
+    - name: Build App Service Order Docker Image
       run: docker build . --file ./Mango.Services.OrderAPI/Dockerfile  --tag mango.service.order
+
+    - name: Build App Service Product Docker Image
+      run: docker build ./Mango.Services.ProductAPI  --tag mango.services.productapi
+
+    - name: Build App Service Payment Docker Image
+      run: docker build . --file ./Mango.Services.PaymentAPI/Dockerfile  --tag mango.services.payment
+
+    - name: Build App Shopping Cart Docker Image
+      run: docker build . --file ./Mango.Services.ShoppingCartAPI/Dockerfile  --tag mango.services.shoppingcart
+
+    - name: Build App Services Identity Docker Image
+      run: docker build ./Mango.Services.Identity  --tag mango.services.identity
+
+    - name: Build App Services Email Docker Image
+      run: docker build . --file ./Mango.Services.Email/Dockerfile  --tag mango.services.email
+
+    - name: Build App Services Coupon Docker Image
+      run: docker build ./Mango.Services.CouponAPI  --tag mango.services.coupon
+
+      
 
     
       
