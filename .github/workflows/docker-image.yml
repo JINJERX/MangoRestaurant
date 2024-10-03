@@ -15,28 +15,28 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build App Docker Image
-      run: docker build ./Mango.Web  --tag mango.web
+      run: docker build ./Mango.Web  --tag jinjerxx/mango.web
 
     - name: Build App Service Order Docker Image
-      run: docker build . --file ./Mango.Services.OrderAPI/Dockerfile  --tag mango.service.order
+      run: docker build . --file ./Mango.Services.OrderAPI/Dockerfile  --tag jinjerxx/mango.service.order
 
     - name: Build App Service Product Docker Image
-      run: docker build ./Mango.Services.ProductAPI  --tag mango.services.productapi
+      run: docker build ./Mango.Services.ProductAPI  --tag jinjerxx/mango.services.productapi
 
     - name: Build App Service Payment Docker Image
-      run: docker build . --file ./Mango.Services.PaymentAPI/Dockerfile  --tag mango.services.payment
+      run: docker build . --file ./Mango.Services.PaymentAPI/Dockerfile  --tag jinjerxx/mango.services.payment
 
     - name: Build App Shopping Cart Docker Image
-      run: docker build . --file ./Mango.Services.ShoppingCartAPI/Dockerfile  --tag mango.services.shoppingcart
+      run: docker build . --file ./Mango.Services.ShoppingCartAPI/Dockerfile  --tag jinjerxx/mango.services.shoppingcart
 
     - name: Build App Services Identity Docker Image
-      run: docker build ./Mango.Services.Identity  --tag mango.services.identity
+      run: docker build ./Mango.Services.Identity  --tag jinjerxx/mango.services.identity
 
     - name: Build App Services Email Docker Image
-      run: docker build . --file ./Mango.Services.Email/Dockerfile  --tag mango.services.email
+      run: docker build . --file ./Mango.Services.Email/Dockerfile  --tag jinjerxx/mango.services.email
 
     - name: Build App Services Coupon Docker Image
-      run: docker build ./Mango.Services.CouponAPI  --tag mango.services.coupon
+      run: docker build ./Mango.Services.CouponAPI  --tag jinjerxx/mango.services.coupon
       
   push_registry:
     needs: build  
@@ -51,7 +51,17 @@ jobs:
          password: ${{ secrets.DOCKERHUB_TOKEN }}    
       -
         name: push to registry
-        run: docker image push mango.web
+        run: |
+          jinjerxx/mango.services.productapi
+          jinjerxx/mango.service.order
+          docker image push jinjerxx/mango.web
+          jinjerxx/mango.services.payment
+          jinjerxx/mango.services.shoppingcart
+          jinjerxx/mango.services.shoppingcart
+          jinjerxx/mango.services.identity
+          jinjerxx/mango.services.email
+          jinjerxx/mango.services.coupon
+        
          
   
       
