@@ -15,5 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build App Docker Image
-      # run: docker build ./Mango.Web --file Dockerfile --tag mango.web
-      run: whoami
+      run: docker build ./Mango.Web --file Dockerfile --tag mango.web
+      
